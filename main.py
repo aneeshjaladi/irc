@@ -36,7 +36,6 @@ def start_server(host='127.0.0.1', port=3000):
         print(f"New connection from {client_address}")
         clients.append(client_socket)
         client_socket.send(b"Welcome to the IRC server!\n")
-
         thread = threading.Thread(target=handle_client, args=(client_socket,))
         thread.start()
 
